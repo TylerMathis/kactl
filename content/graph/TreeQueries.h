@@ -19,7 +19,7 @@ template <class T, class F> struct TreeQueries {
 	jmp(l+1, vi(n)), assoc(l+1, vector<T>(n, le)), dep(n) {
 		dfs(root, root, le, 0);
 	}
-	void dfs(int v, int p, int w, int d) {
+	void dfs(int v, int p, T w, int d) {
 		dep[v] = d; jmp[0][v] = p; assoc[0][v] = w;
 		for (int lg = 1; lg <= l; ++lg) {
 			jmp[lg][v] = jmp[lg-1][jmp[lg-1][v]];
